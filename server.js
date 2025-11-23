@@ -18,7 +18,9 @@ app.use(cors({
         "http://172.20.32.1:5173",
         "http://10.0.2.2:5173",
         "http://192.168.1.113:5173",
-        "https://api-brainrot-messenger.onrender.com"
+        "https://api-brainrot-messenger.onrender.com",
+        "capacitor://localhost",
+        "http://localhost"
     ],
     methods: ["GET", "POST"]
 }));
