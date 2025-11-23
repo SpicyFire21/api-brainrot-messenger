@@ -7,7 +7,9 @@ import pool from './database/db.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const apiURL = `http://localhost:${PORT}`;
+// const apiURL = `http://localhost:${PORT}`;
+const apiURL = `https://api-brainrot-messenger.onrender.com`;
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
