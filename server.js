@@ -4,16 +4,15 @@ import { Server } from "socket.io";
 import cors from 'cors';
 import bodyParser from "body-parser";
 import pool from './database/db.js';
-import MessageService from "./services/message.service.js";
 
 const app = express();
 const PORT = 3000;
-const apiURL = `http://172.20.32.1:${PORT}`;
+const apiURL = `http://localhost:${PORT}`;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: ["http://localhost:5173", "capacitor://localhost", "http://172.20.32.1"],
+    origin: ["http://localhost:5173", "capacitor://localhost"],
     methods: ["GET", "POST"]
 }));
 
