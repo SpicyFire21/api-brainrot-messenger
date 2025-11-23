@@ -9,15 +9,14 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const apiURL = `http://localhost:${PORT}`
 
-// CORS ABSOLUMENT AVANT TOUT
 app.use(cors({
     origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
-// Preflight OPTIONS obligatoire pour Render
-app.options("/*", cors())
+app.options("/*", cors()) // correct pour Express 5
+
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
