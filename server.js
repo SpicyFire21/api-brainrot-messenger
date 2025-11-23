@@ -13,7 +13,13 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: ["*"],
+    origin: [
+        "http://localhost:5173",
+        "http://172.20.32.1:5173",
+        "http://10.0.2.2:5173",
+        "http://192.168.1.113:5173",
+        "https://api-brainrot-messenger.onrender.com"
+    ],
     methods: ["GET", "POST"]
 }));
 
