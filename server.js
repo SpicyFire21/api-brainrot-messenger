@@ -7,7 +7,7 @@ import pool from './database/db.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const apiURL = `http://localhost:${PORT}`;
+const apiURL = `https://api-brainrot-messenger.onrender.com`;
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +20,8 @@ app.use(cors({
         "http://192.168.1.113:5173",
         "https://api-brainrot-messenger.onrender.com",
         "capacitor://localhost",
-        "http://localhost"
+        "http://localhost",
+        "https://localhost"
     ],
     methods: ["GET", "POST"]
 }));
@@ -43,7 +44,7 @@ io.on("connection", (socket) => {
 
     socket.on("chat-message", async (data) => {
         try {
-            await axios.post(`${apiURL}/messages/send`, data)
+            await axios.post(`http://localhost:${PORT}/messages/send`, data)
 
             io.emit("chat-message", data);
         } catch (e) {
