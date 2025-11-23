@@ -17,7 +17,7 @@ app.use(cors({
 }))
 
 // Preflight OPTIONS obligatoire pour Render
-app.options("*", cors())
+app.options("/*", cors())
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
