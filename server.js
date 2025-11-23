@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
 
     socket.on("chat-message", async (data) => {
         try {
-            await axios.post(`http://localhost:${PORT}/messages/send`, data)
+            await axios.post(`${apiURL}/messages/send`, data)
 
             io.emit("chat-message", data);
         } catch (e) {
