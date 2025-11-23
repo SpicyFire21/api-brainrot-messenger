@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import pool from './database/db.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const apiURL = `http://localhost:${PORT}`;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));

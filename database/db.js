@@ -10,6 +10,9 @@ const credential = {
     database: process.env.DB_DATABASE,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
+    ssl: {
+        rejectUnauthorized: false
+    }
 }
 const pool = new Pool(credential);
 export default pool;
